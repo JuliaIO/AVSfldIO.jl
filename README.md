@@ -18,6 +18,15 @@ in conjunction with the
 [FileIO package](https://github.com/JuliaIO/FileIO.jl).
 
 
+## Methods
+
+Following the
+[FileIO API](https://juliaio.github.io/FileIO.jl/stable/implementing),
+this package exports methods
+* `AVSfldIO.load(filename)`
+* `AVSfldIO.save(filename, data)`
+
+
 ## File format overview
 
 The AVS `.fld` data format
@@ -36,10 +45,11 @@ The data file can contain either ASCII or binary data.
 
 ### AVS internal format
 
-Suppose you have a `128 \times 64`
-(first dimension (radial samples) varies fastest)
-sinogram consisting of short integers.
-Then the format of the AVS internal header would be:
+For a `128 × 64` array
+(first dimension varies fastest)
+consisting of short integers
+(`Int16` in Julia),
+the format of the AVS internal header would be:
 ```
 # AVS field file
 ndim=2
@@ -51,12 +61,12 @@ data=short
 field=uniform
 ```
 followed by the two form feeds,
-and then the $128 \times 64$ short integers
+and then the $128 × 64$ short integers
 in binary format.
 
-If you have a 3D stack of, say, 20 sinograms (or images)
-with short integers,
-then you would use
+For a 3D array of size `128 × 64 × 20`
+of short integers,
+the header is
 ```
 # AVS field file
 ndim=3
