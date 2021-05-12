@@ -4,7 +4,7 @@ module for AVS .fld file IO
 """
 module AVSfldIO
 
-using FileIO: File, format
+using FileIO: File, @format_str
 
 include("fld-read.jl")
 include("fld-write.jl")
