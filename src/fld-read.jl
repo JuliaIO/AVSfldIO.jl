@@ -75,7 +75,7 @@ end
 
 
 """
-    head = fld_header(file::String, ...)
+    head = fld_header(file::String ; dir::String="", chat=false)
 
 Read header data from AVS format `.fld` file, then close file.
 
@@ -108,7 +108,7 @@ end
 # + [ ] short datatype
 
 """
-    fld_read(file::String)
+    data = fld_read(file::String ; dir::String="", chat=false)
 
 Read data from AVS format `.fld` file
 

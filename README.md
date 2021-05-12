@@ -22,9 +22,19 @@ in conjunction with the
 
 Following the
 [FileIO API](https://juliaio.github.io/FileIO.jl/stable/implementing),
-this package exports methods
+this package provides (but does not export) methods
 * `AVSfldIO.load(filename)`
 * `AVSfldIO.save(filename, data)`
+
+It does export the following methods:
+* `header, is_external_file, fid = fld_open(file ; dir="", chat=false)`
+* `header = fld_header(file::String ; dir="", chat=false)`
+* `data = fld_read(file::String ; dir="", chat=false)`
+* `fld_write(file, data ; kwargs...)`
+
+Use `chat=true` for verbose debugging output.
+Use `dir=somepath` to prepend a path to `file`.
+See docstrings for more details.
 
 
 ## File format overview
@@ -176,7 +186,7 @@ for this format.
 
 
 
-## Author
+## Authors
 
 Jeff Fessler and his group at the University of Michigan.
 
