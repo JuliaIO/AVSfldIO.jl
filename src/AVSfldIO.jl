@@ -10,10 +10,10 @@ include("fld-read.jl")
 include("fld-write.jl")
 
 # the two key methods:
-load(filename::File{format"FLD"} ; kwargs...) =
-   fld_read(filename ; kwargs...)
+load(ff::File{format"FLD"} ; kwargs...) =
+   fld_read(ff.filename ; kwargs...)
 
-save(filename::File{format"FLD"}, data ; kwargs...) =
-   fld_write(filename, data ; kwargs...)
+save(ff::File{format"FLD"}, data ; kwargs...) =
+   fld_write(ff.filename, data ; kwargs...)
 
 end # module
