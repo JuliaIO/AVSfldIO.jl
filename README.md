@@ -3,7 +3,6 @@
 [![action status][action-img]][action-url]
 [![pkgeval status][pkgeval-img]][pkgeval-url]
 [![codecov][codecov-img]][codecov-url]
-[![coveralls][coveralls-img]][coveralls-url]
 [![docs stable][docs-stable-img]][docs-stable-url]
 [![docs dev][docs-dev-img]][docs-dev-url]
 [![license][license-img]][license-url]
@@ -199,11 +198,14 @@ Jeff Fessler and his group at the University of Michigan.
 [pkgeval-url]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/M/AVSfldIO.html
 [codecov-img]: https://codecov.io/github/JeffFessler/AVSfldIO.jl/coverage.svg?branch=main
 [codecov-url]: https://codecov.io/github/JeffFessler/AVSfldIO.jl?branch=main
-[coveralls-img]: https://coveralls.io/repos/JeffFessler/AVSfldIO.jl/badge.svg?branch=main
-[coveralls-url]: https://coveralls.io/github/JeffFessler/AVSfldIO.jl?branch=main
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
 [docs-stable-url]: https://JeffFessler.github.io/AVSfldIO.jl/stable
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
 [docs-dev-url]: https://JeffFessler.github.io/AVSfldIO.jl/dev
 [license-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
 [license-url]: LICENSE
+<!--
+[![coveralls][coveralls-img]][coveralls-url]
+[coveralls-img]: https://coveralls.io/repos/JeffFessler/AVSfldIO.jl/badge.svg?branch=main
+[coveralls-url]: https://coveralls.io/github/JeffFessler/AVSfldIO.jl?branch=main
+-->
