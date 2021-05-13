@@ -97,7 +97,7 @@ and the filename must end with the extension `.fld`.
 
 ### AVS external format
 
-Now suppose you have stored the above sinogram data
+Now suppose you have stored the above array data
 in a binary file named, say, `sino.dat`
 with some home-brew header in it that consists
 of, say, 1999 bytes.
@@ -131,25 +131,19 @@ This format does not allow for additional headers buried within the data.
 If there is no binary header,
 then you can omit the `skip=0` line altogether.
 If your data is in ASCII format (hopefully not),
-then you can change
+then replace
 `filetype=binary`
-to (you guessed it)
+with
 `filetype=ascii`.
 However,
 for ASCII data,
 the `skip=` option
 refers to ASCII entries, not bytes.
 
-The allowed types in the
+See table below
+for supported types in the
 `data=...`
-line include:
-`byte`,
-`short`,
-`int`,
-`float`,
-`double`.
-The 
-`byte` format is unsigned 8 bits.
+line.
 
 The complete AVS `.fld` format
 includes other features
@@ -214,6 +208,7 @@ are not portable between hosts with different
 | `xdr_double` | `Float64` | `be` | `8` |
 
 Entries with `?` are native to the host CPU and thus not portable.
+The `byte` format is unsigned 8 bits.
 
 
 ## History
