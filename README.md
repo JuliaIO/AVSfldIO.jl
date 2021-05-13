@@ -176,7 +176,7 @@ uses that 5-byte string
 as the
 ["magic bytes"](https://en.wikipedia.org/wiki/List_of_file_signatures)
 or
-["magic number'](https://en.wikipedia.org/wiki/File_format#Magic_number)
+["magic number"](https://en.wikipedia.org/wiki/File_format#Magic_number)
 for this file type.
 If you have a file that does not have that string as the start of its header,
 then simply add it with an editor
@@ -192,25 +192,25 @@ designed for portability, because options like `int`
 are not portable between hosts with different
 [endianness](https://en.wikipedia.org/wiki/Endianness).
 
-| format | Julia meaning | endian | bytes |
-| :--- | :---: | :---: | :---: | :---: |
-| `byte` | `UInt8` | n/a | 1 |
-| `short_be` | `UInt16` | `be` | 2 |
-| `short_sun` | `UInt16` | `be` | 2 |
-| `xdr_short` | `UInt16` | `be` | 2 |
-| `short_le` | `UInt16` | `le` | 2 |
-| `int` | `Int32` | ? | 4 |
-| `int_le` | `Int32` | `le` | 4 |
-| `int_be` | `Int32` | `be` | 4 |
-| `xdr_int` | `Int32` | `be` | 4 |
-| `float` | `Float32` | ? | 4 |
-| `float_le` | `Float32` | `le` | 4 |
-| `float_be` | `Float32` | `be` | 4 |
-| `xdr_float` | `Float32` | `be` | 4 |
-| `double` | `Float64` | ? | 8 |
-| `double_le` | `Float64` | `le` | 8 |
-| `double_be` | `Float64` | `be` | 8 |
-| `xdr_double` | `Float64` | `be` | 8 |
+| format | Julia type | endian | bytes |
+| :--- | :--- | :---: | :---: |
+| `byte` | `UInt8` | n/a | `1` |
+| `short_be` | `UInt16` | `be` | `2` |
+| `short_sun` | `UInt16` | `be` | `2` |
+| `xdr_short` | `UInt16` | `be` | `2` |
+| `short_le` | `UInt16` | `le` | `2` |
+| `int` | `Int32` | `?` | `4` |
+| `int_le` | `Int32` | `le` | `4` |
+| `int_be` | `Int32` | `be` | `4` |
+| `xdr_int` | `Int32` | `be` | `4` |
+| `float` | `Float32` | `?` | `4` |
+| `float_le` | `Float32` | `le` | `4` |
+| `float_be` | `Float32` | `be` | `4` |
+| `xdr_float` | `Float32` | `be` | `4` |
+| `double` | `Float64` | `?` | `8` |
+| `double_le` | `Float64` | `le` | `8` |
+| `double_be` | `Float64` | `be` | `8` |
+| `xdr_double` | `Float64` | `be` | `8` |
 
 Entries with `?` are native to the host CPU and thus not portable.
 
