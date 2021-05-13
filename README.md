@@ -70,11 +70,12 @@ data=short
 field=uniform
 ```
 followed by the two form feeds,
-and then the $128 × 64$ short integers
+and then the `128 × 64` short integers
 in binary format.
 
 For a 3D array of size `128 × 64 × 20`
-of short integers,
+of 32-bit floating point numbers
+with the host CPU endianness,
 the header is
 ```
 # AVS field file
@@ -84,7 +85,7 @@ dim2=64
 dim3=20
 nspace=3
 veclen=1
-data=short
+data=float
 field=uniform
 ```
 
