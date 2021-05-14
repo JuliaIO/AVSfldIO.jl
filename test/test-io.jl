@@ -11,7 +11,7 @@ data1 = reshape(Int32.(1:20), 4, 5)
 
 file = tempname() * ".fld"
 
-ff = File{format"FLD"}(file)
+ff = File{format"AVSfld"}(file)
 AVSfldIO.save(ff, data1)
 data2 = AVSfldIO.load(ff)
 @test data2 == data1

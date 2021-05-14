@@ -11,10 +11,10 @@ using FileIO: add_format, load, save, UUID
 data1 = reshape(Int32.(1:20), 4, 5)
 file = tempname() * ".fld"
 
-#ff = File{format"FLD"}(file)
+#ff = File{format"AVSfld"}(file)
 #query(ff)
 
-add_format(format"FLD", "", ".fld",
+add_format(format"AVSfld", "# AVS", ".fld",
     [:AVSfldIO => UUID("b6189060-daf9-4c28-845a-cc0984b81781")])
 
 save(file, data1)
