@@ -4,7 +4,7 @@ test AVSfldIO. through FileIO
 =#
 
 using FileIO: File, @format_str
-using Test: @test
+using Test: @test, @test_throws
 import AVSfldIO
 
 data1 = reshape(Int32.(1:20), 4, 5)
@@ -17,3 +17,5 @@ data2 = AVSfldIO.load(ff)
 @test data2 == data1
 
 rm(file, force=true)
+
+@test_throws ArgumentError AVSfldIO.save(ff, "string")
