@@ -165,7 +165,7 @@ function fld_read(
 
         elseif filetype != "multi"
             if !isfile(extfile)
-                fdir = copy(file)
+                fdir = file
                 slash = findlast(isequal('/'), fdir) # todo: windows?
                 isnothing(slash) && throw("cannot find external file $extfile")
                 fdir = fdir[1:slash]
