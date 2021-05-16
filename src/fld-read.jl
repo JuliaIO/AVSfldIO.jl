@@ -165,16 +165,18 @@ function fld_read(
 
         elseif filetype != "multi"
             if !isfile(extfile)
-                fdir = file
+                fdir = copy(file)
                 slash = findlast(isequal('/'), fdir) # todo: windows?
                 isnothing(slash) && throw("cannot find external file $extfile")
                 fdir = fdir[1:slash]
                 extfile = fdir * extfile # add directory
                 !isfile(extfile) && throw("no external ref file $extfile")
             end
+
         else
             throw("multi not supported yet") # todo
         end
+
     else
         filetype = ""
         extfile = ""
@@ -224,7 +226,7 @@ function fld_read_single(
     # read binary data and reshape appropriately
     data = Array{format}(undef, rdims...)
     try
-        read!(fid,data)
+        read!(fid, data)
     catch
         @info("rdims=$rdims")
         throw("file count != data count")
