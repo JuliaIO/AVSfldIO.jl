@@ -89,8 +89,6 @@ data=float
 field=uniform
 ```
 
-This IO library supports up to 4 dimensions.
-
 The `save` method in this library
 writes to the AVS internal format by default,
 and the filename must end with the extension `.fld`.
@@ -122,7 +120,7 @@ variable 1 file=sino.dat filetype=binary skip=1999
 You can add additional comments
 to these headers
 using lines that begin with `#`.
-The `skip=1999` line
+The `skip=1999` option
 indicates that there is a `1999` byte header to be skipped
 before reading the binary data.
 
@@ -151,8 +149,8 @@ that almost certainly are not supported
 by this IO library.
 
 This library supports
-some extensions that are nonstandard AVS
-but very handy,
+some extensions that are not standard AVS
+but are very handy,
 like a single 3D header file
 that points to multiple 2D files
 that get treated as a single entity.
@@ -210,17 +208,33 @@ are not portable between hosts with different
 Entries with `?` are native to the host CPU and thus not portable.
 The `byte` format is unsigned 8 bits.
 
+The following table shows the saved output `data=` field
+for various input Julia data fields,
+assuming little endian (`:le`) default
+to `AVSfldIO.fld_write`.
+
+| Julia type | `data` | note |
+| :--- | :--- | :--- |
+| `Bool` | `byte` | |
+| `UInt8` | `byte` | |
+| `Int16` | `short_le` | |
+| `Int32` | `int_le` | |
+| `Int64` | `int_le` | (downgraded) |
+| `Float16` | `float_le` | (upgraded) |
+| `Float32` | `float_le` |
+| `Float64` | `double_le` |
+| `BigFloat` | `double_le` | (downgraded) |
 
 ## History
 
 The "application visualization system" (AVS)
-https://www.avs.com/
-was an application system developed in the early 1990s
-an used widely in the medical imaging community.
-
+https://www.avs.com
+was an interactive graphics and computation framework
+developed in the early 1990s
+and used widely in the medical imaging community.
 See the article at https://doi.org/10.1109/38.31462 for an overview.
 
-The data files used in AVS had the extension `.fld`
+AVS data files have the extension `.fld`
 and many software frameworks provide file IO support
 for this format.
 * https://doi.org/10.1109/38.31462
@@ -234,15 +248,16 @@ for this format.
 
 ## Authors
 
-Jeff Fessler and his group at the University of Michigan.
+[Jeff Fessler](https://web.eecs.umich.edu/~fessler)
+and his group at the University of Michigan.
 
 <!-- URLs -->
 [action-img]: https://github.com/JeffFessler/AVSfldIO.jl/workflows/Unit%20test/badge.svg
 [action-url]: https://github.com/JeffFessler/AVSfldIO.jl/actions
 [build-img]: https://github.com/JeffFessler/AVSfldIO.jl/workflows/CI/badge.svg?branch=main
 [build-url]: https://github.com/JeffFessler/AVSfldIO.jl/actions?query=workflow%3ACI+branch%3Amain
-[pkgeval-img]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/M/AVSfldIO.svg
-[pkgeval-url]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/M/AVSfldIO.html
+[pkgeval-img]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.svg
+[pkgeval-url]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.html
 [codecov-img]: https://codecov.io/github/JeffFessler/AVSfldIO.jl/coverage.svg?branch=main
 [codecov-url]: https://codecov.io/github/JeffFessler/AVSfldIO.jl?branch=main
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg

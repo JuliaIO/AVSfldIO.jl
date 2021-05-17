@@ -26,6 +26,6 @@ save(ff::File{format"AVSfld"}, data::AbstractArray{<:Real} ; kwargs...) =
    fld_write(ff.filename, data ; kwargs...)
 
 save(ff::File{format"AVSfld"}, data ; kwargs...) =
-    throw(ArgumentError, "data must be an array of reals for AVSfld")
+    throw(ArgumentError("data must be an array of reals for AVSfld"))
 
 end # module
