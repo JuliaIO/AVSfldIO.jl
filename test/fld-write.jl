@@ -25,7 +25,7 @@ function fld_write_test1(file, data ;
             rm(tmp)
         catch
             @warn "could not rm raw file $tmp"
-            @show isfile($tmp)
+            @show isfile(tmp)
         end
     end
     true
