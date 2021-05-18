@@ -56,6 +56,7 @@ end
 @testset "write odd" begin
     for T in (BigFloat, Float16, BigInt, Int64, Bool)
         data = T.([1 0 1])
+        file = joinpath(dir, "fld-write-test-$T.fld")
         @test fld_write_test1(file, data ; check=true, chat=false)
     end
 end
@@ -82,6 +83,7 @@ end
 @testset "write multi" begin
 #   file = "../tmp2.fld"
 #   file = "tmp.fld"
+    file = joinpath(dir, "fld-write-test-multi.fld")
     data = rand(Float32, 7, 9, 2)
     file1 = "$(basename(file)).part1"
     file2 = "$(basename(file)).part2"
