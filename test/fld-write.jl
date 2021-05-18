@@ -24,7 +24,8 @@ function fld_write_test1(file, data ;
         try # because of windows failure here
             rm(tmp)
         catch
-            @warn "could not rm raw file $raw"
+            @warn "could not rm raw file $tmp"
+            @show isfile($tmp)
         end
     end
     true
