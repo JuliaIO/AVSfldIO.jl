@@ -34,16 +34,17 @@ end
 
 # test writing and reading AVS `.fld` files of all key types
 
-dir = mktempdir()
-file = joinpath(dir, "fld-write-test.fld")
 chat = isinteractive()
 
 @testset "write std" begin
+    dir = mktempdir()
     for dtype in (UInt8, Int16, Int32, Float32, Float64)
         for endian in (:le, :be)
             for raw in (false, true)
                 chat && @info "dtype=$dtype endian=$endian raw=$raw"
                 data = convert.(dtype, [5:8; 1:4])
+                # kludge so windows gets new file name every test:
+                file = joinpath(dir, "fld-write-test-$dtype-$endian-$raw.fld")
                 @test fld_write_test1(file, data ; endian, raw,
                     head = ["dtype=$dtype endian=$endian raw=$raw",],
                     check=true, chat=false)
