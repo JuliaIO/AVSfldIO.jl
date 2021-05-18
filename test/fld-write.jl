@@ -21,7 +21,11 @@ function fld_write_test1(file, data ;
     rm(file)
     if raw
         tmp = file[1:(end-4)] * ".raw"
-        rm(tmp)
+        try # because of windows failure here
+            rm(tmp)
+        catch
+            @warn "could not rm raw file $raw"
+        end
     end
     true
 end
