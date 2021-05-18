@@ -3,9 +3,9 @@
 [![action status][action-img]][action-url]
 [![pkgeval status][pkgeval-img]][pkgeval-url]
 [![codecov][codecov-img]][codecov-url]
+[![license][license-img]][license-url]
 [![docs stable][docs-stable-img]][docs-stable-url]
 [![docs dev][docs-dev-img]][docs-dev-url]
-[![license][license-img]][license-url]
 
 https://github.com/JeffFessler/AVSfldIO.jl.git
 
@@ -15,6 +15,7 @@ for the
 [Julia language](https://julialang.org),
 in conjunction with the
 [FileIO package](https://github.com/JuliaIO/FileIO.jl).
+This data format supports N-dimensional arrays of real numbers.
 
 
 ## Methods
@@ -34,6 +35,21 @@ It does export the following methods:
 Use `chat=true` for verbose debugging output.
 Use `dir=somepath` to prepend a path to `file`.
 See docstrings for more details.
+
+
+## Usage
+
+Most users will simply use the `FileIO` `load` and `save` methods
+as follows.
+
+```julia
+using FileIO # need version ≥ 1.9
+data1 = rand(6,7,8) # random 3D data
+file = "test.fld"
+save(file, data1) # will throw error if the file exists already
+data2 = load(file)
+@assert data1 == data2
+```
 
 
 ## File format overview
