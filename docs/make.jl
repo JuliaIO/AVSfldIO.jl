@@ -25,5 +25,5 @@ deploydocs(;
     devbranch = "main",
     devurl = "dev",
     versions = ["stable" => "v^", "dev" => "dev"],
-    push_preview = true,
+#   push_preview = true,
 )
