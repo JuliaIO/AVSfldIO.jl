@@ -23,7 +23,7 @@ makedocs(;
 deploydocs(;
     repo = "github.com/JeffFessler/AVSfldIO.jl.git",
     devbranch = "main",
-    devurl = "dev",
-    versions = ["stable" => "v^", "dev" => "dev"],
+#   devurl = "dev",
+#   versions = ["stable" => "v^", "dev" => "dev"],
 #   push_preview = true,
 )
