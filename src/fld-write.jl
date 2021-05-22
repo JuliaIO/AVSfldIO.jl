@@ -110,6 +110,8 @@ function fld_write(
             write(fid, fun.(data))
         end
     end
+
+	return nothing
 end
 
 
