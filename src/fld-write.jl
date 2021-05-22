@@ -60,50 +60,58 @@ function fld_write(
         check && isfile(fileraw) && throw("file $fileraw exists")
     end
 
-    # open output file for writing
-    fid = open(file, "w")
-    fraw = raw ? open(fileraw, "w") : fid
+    # write header to IOBuffer
+    io = IOBuffer()
 
-    # write header
     ndim = ndims(data)
 
-    println(fid, "# AVS field file ($(basename(@__FILE__)))")
+    println(io, "# AVS field file ($(basename(@__FILE__)))")
     for line in head
-        println(fid, "# $line")
+        println(io, "# $line")
     end
 
-    println(fid, "ndim=$ndim")
+    println(io, "ndim=$ndim")
     for ii=1:ndim
-        println(fid, "dim$ii=$(size(data,ii))")
+        println(io, "dim$ii=$(size(data,ii))")
     end
-    println(fid, "nspace=$ndim")
-    println(fid, "veclen=1")
-    println(fid, "data=$datatype")
-    println(fid, "field=uniform")
+    println(io, "nspace=$ndim")
+    println(io, "veclen=1")
+    println(io, "data=$datatype")
+    println(io, "field=uniform")
 
     if raw
-        println(fid, "variable 1 file=$fileraw filetype=binary")
+        println(io, "variable 1 file=$fileraw filetype=binary")
     else
-        write(fid, "\f\f") # two form feeds: char(12)
+        write(io, "\f\f") # two form feeds: char(12)
     end
 
-    # finally, write the binary data
+    # determine how to write the binary data
     host_is_le = () -> ENDIAN_BOM == 0x04030201
     fun = (host_is_le() == (endian === :le)) ?
         identity : # host/file same endian
         (host_is_le() && (endian === :be)) ?
         hton :
         (!host_is_le() && (endian === :le)) ?
-        write(fraw, htol.(data)) :
+        htol :
         throw("not done")
-    write(fraw, fun.(data))
 
-    close(fid)
-
-    if raw
-        close(fraw)
+    # write header from IO buffer to file
+    open(file, "w") do fid
+        write(fid, take!(io))
     end
 
+    # write binary data to file or fileraw
+    if raw
+        open(fileraw, "w") do fraw
+            write(fraw, fun.(data))
+        end
+    else
+        open(file, "a") do fid
+            write(fid, fun.(data))
+        end
+    end
+
+	return nothing
 end
 
 
