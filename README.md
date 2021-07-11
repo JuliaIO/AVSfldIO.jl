@@ -7,7 +7,7 @@
 [![docs stable][docs-stable-img]][docs-stable-url]
 [![docs dev][docs-dev-img]][docs-dev-url]
 
-https://github.com/JeffFessler/AVSfldIO.jl.git
+https://github.com/JuliaIO/AVSfldIO.jl.git
 
 File IO for AVS format "field" data files
 with extension `.fld`
@@ -265,25 +265,26 @@ for this format.
 ## Authors
 
 [Jeff Fessler](https://web.eecs.umich.edu/~fessler)
-and his group at the University of Michigan.
+and his group at the University of Michigan,
+and contributors
 
 <!-- URLs -->
-[action-img]: https://github.com/JeffFessler/AVSfldIO.jl/workflows/Unit%20test/badge.svg
-[action-url]: https://github.com/JeffFessler/AVSfldIO.jl/actions
-[build-img]: https://github.com/JeffFessler/AVSfldIO.jl/workflows/CI/badge.svg?branch=main
-[build-url]: https://github.com/JeffFessler/AVSfldIO.jl/actions?query=workflow%3ACI+branch%3Amain
+[action-img]: https://github.com/JuliaIO/AVSfldIO.jl/workflows/Unit%20test/badge.svg
+[action-url]: https://github.com/JuliaIO/AVSfldIO.jl/actions
+[build-img]: https://github.com/JuliaIO/AVSfldIO.jl/workflows/CI/badge.svg?branch=main
+[build-url]: https://github.com/JuliaIO/AVSfldIO.jl/actions?query=workflow%3ACI+branch%3Amain
 [pkgeval-img]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.svg
 [pkgeval-url]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.html
-[codecov-img]: https://codecov.io/github/JeffFessler/AVSfldIO.jl/coverage.svg?branch=main
-[codecov-url]: https://codecov.io/github/JeffFessler/AVSfldIO.jl?branch=main
+[codecov-img]: https://codecov.io/github/JuliaIO/AVSfldIO.jl/coverage.svg?branch=main
+[codecov-url]: https://codecov.io/github/JuliaIO/AVSfldIO.jl?branch=main
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
-[docs-stable-url]: https://JeffFessler.github.io/AVSfldIO.jl/stable
+[docs-stable-url]: https://JuliaIO.github.io/AVSfldIO.jl/stable
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
-[docs-dev-url]: https://JeffFessler.github.io/AVSfldIO.jl/dev
+[docs-dev-url]: https://JuliaIO.github.io/AVSfldIO.jl/dev
 [license-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
 [license-url]: LICENSE
 <!--
 [![coveralls][coveralls-img]][coveralls-url]
-[coveralls-img]: https://coveralls.io/repos/JeffFessler/AVSfldIO.jl/badge.svg?branch=main
-[coveralls-url]: https://coveralls.io/github/JeffFessler/AVSfldIO.jl?branch=main
+[coveralls-img]: https://coveralls.io/repos/JuliaIO/AVSfldIO.jl/badge.svg?branch=main
+[coveralls-url]: https://coveralls.io/github/JuliaIO/AVSfldIO.jl?branch=main
 -->

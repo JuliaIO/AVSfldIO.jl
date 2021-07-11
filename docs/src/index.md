@@ -13,7 +13,7 @@ CurrentModule = AVSfldIO
 
 File I/O routines for AVS `.fld` format data files;
 see
-[(AVSfldIO)](https://github.com/JeffFessler/AVSfldIO.jl)
+[(AVSfldIO)](https://github.com/JuliaIO/AVSfldIO.jl)
 
 ## Index
 
