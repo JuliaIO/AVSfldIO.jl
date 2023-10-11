@@ -8,7 +8,7 @@ DocMeta.setdocmeta!(AVSfldIO, :DocTestSetup, :(using AVSfldIO); recursive=true)
 makedocs(;
     modules = [AVSfldIO],
     authors = "Jeff Fessler <fessler@umich.edu> and contributors",
-    repo = "https://github.com/JuliaIO/AVSfldIO.jl/blob/{commit}{path}#{line}",
+#   repo = "https://github.com/JuliaIO/AVSfldIO.jl/blob/{commit}{path}#{line}",
     sitename = "AVSfldIO.jl",
     format = Documenter.HTML(;
         prettyurls = get(ENV, "CI", "false") == "true",
