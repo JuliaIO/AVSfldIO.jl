@@ -9,7 +9,7 @@ using FileIO: File, @format_str
 include("fld-read.jl")
 include("fld-write.jl")
 
-# the two key methods that will be used by FileIO:
+# The two key methods that will be used by FileIO:
 
 """
     data = load(ff::File{format"AVSfld"} ; kwargs...)

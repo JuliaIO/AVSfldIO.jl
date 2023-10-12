@@ -12,14 +12,14 @@ export fld_open, fld_header, fld_read
 Read header data from AVS format `.fld` file.
 Leaves file open for more reading.
 
-in
+# In
 - `file::String` file name, usually ending in `.fld`
 
-option
+# Option
 - `dir::String` prepend file name with this directory; default ""
 - `chat::Bool` verbose? default: `false`
 
-out
+# Out
 - `head::String` array of header information
 - `is_external_file::Bool` true if AVS external format
 - `fid::IOstream`
@@ -79,14 +79,14 @@ end
 
 Read header data from AVS format `.fld` file, then close file.
 
-in
+# In
 - `file::String` file name, usually ending in `.fld`
 
-option
+# Option
 - `dir::String` prepend file name with this directory; default ""
 - `chat::Bool` verbose? default: `false`
 
-out
+# Out
 - `head::String` array of header information
 """
 function fld_header(file::AbstractString ; kwargs...)
@@ -112,14 +112,14 @@ end
 
 Read data from AVS format `.fld` file
 
-in
+# In
 - `file` file name, usually ending in `.fld`
 
-option
+# Option
 - `dir::String` prepend file name with this directory; default ""
 - `chat::Bool` verbose?
 
-out
+# Out
 - `data` Array (1D - 5D) in the data type of the file itself
 """
 function fld_read(

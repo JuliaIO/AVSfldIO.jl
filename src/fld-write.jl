@@ -13,11 +13,11 @@ export fld_write
 Write data into AVS format `.fld` file.
 See README for file format.
 
-in
+# In
 - `file` name of file typically ending in `.fld`
 - `data` real data array
 
-option
+# Option
 - `check::Bool`         report error if file exists; default `true`
 - `dir::String`         directory name to prepend file name; default `""`
 - `endian::`Symbol`     `:le` little endian (default), `:be` big endian
@@ -111,7 +111,7 @@ function fld_write(
         end
     end
 
-	return nothing
+    return nothing
 end
 
 
@@ -146,4 +146,4 @@ end
     {T <: Union{Float32, Float64, UInt8, Int16, Int32}} = data
 
 fld_write_data_fix(data::AbstractArray{T} ; warn::Bool=true) where {T <: Any} =
-        throw(ArgumentError("unsupported type $T"))
+    throw(ArgumentError("unsupported type $T"))

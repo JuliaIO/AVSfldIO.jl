@@ -1,6 +1,6 @@
 name = "AVSfldIO"
 uuid = "b6189060-daf9-4c28-845a-cc0984b81781"
-authors = ["Jeff Fessler <fessler@umich.edu>"]
+authors = ["Jeff Fessler <fessler@umich.edu> and contributors"]
 version = "0.2.1"
 
 [deps]
@@ -8,4 +8,4 @@ FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
 
 [compat]
 FileIO = "1.9"
-julia = "1.6"
+julia = "1.9"
