@@ -261,6 +261,8 @@ for this format.
 * https://lanl.github.io/LaGriT/pages/docs/read_avs.html
 
 
+Tested with latest Julia 1.x
+
 
 ## Authors
 
