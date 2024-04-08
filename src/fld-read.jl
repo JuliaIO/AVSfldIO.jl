@@ -197,7 +197,7 @@ end
 
 
 # todo: currently supports only one entry per line (see fld_read.m)
-function fld_read_ascii(extfile::AbstractString, dims::Dims, datatype::DataType)
+function fld_read_ascii(extfile::AbstractString, dims::Dims, datatype::Type{<:Real})
     data = zeros(datatype, dims)
     open(extfile, "r") do fid
         for i in 1:length(data)
@@ -211,7 +211,7 @@ end
 
 function fld_read_single(
     file, fid, dims, datatype, fieldtype,
-    is_external_file, extfile, format::DataType, endian, bytes, _skip,
+    is_external_file, extfile, format::Type{<:Real}, endian, bytes, _skip,
 )
 
     # reopen file to same position, with appropriate endian too.
