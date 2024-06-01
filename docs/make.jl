@@ -1,29 +1,45 @@
-# push!(LOAD_PATH,"../src/")
+execute = isempty(ARGS) || ARGS[1] == "run"
 
-using AVSfldIO
-using Documenter
+org, reps = :JuliaIO, :AVSfldIO
+eval(:(using $reps))
+import Documenter
+#import Literate
 
-DocMeta.setdocmeta!(AVSfldIO, :DocTestSetup, :(using AVSfldIO); recursive=true)
+base = "$org/$reps.jl"
 
-makedocs(;
-    modules = [AVSfldIO],
-    authors = "Jeff Fessler <fessler@umich.edu> and contributors",
-#   repo = "https://github.com/JuliaIO/AVSfldIO.jl/blob/{commit}{path}#{line}",
-    sitename = "AVSfldIO.jl",
-    format = Documenter.HTML(;
-        prettyurls = get(ENV, "CI", "false") == "true",
-#       canonical = "https://JuliaIO.github.io/AVSfldIO.jl/stable",
-#       assets = String[],
-    ),
+
+repo = eval(:($reps))
+Documenter.DocMeta.setdocmeta!(repo, :DocTestSetup, :(using $reps); recursive=true)
+
+
+isci = get(ENV, "CI", nothing) == "true"
+
+format = Documenter.HTML(;
+    prettyurls = isci,
+    edit_link = "main",
+    canonical = "https://$org.github.io/$repo.jl/stable/",
+    assets = ["assets/custom.css"],
+)
+
+Documenter.makedocs(;
+    modules = [repo],
+    authors = "Jeff Fessler and contributors",
+    sitename = "$repo.jl",
+    format,
     pages = [
         "Home" => "index.md",
+        "Methods" => "methods.md",
     ],
 )
 
-deploydocs(;
-    repo = "github.com/JuliaIO/AVSfldIO.jl.git",
-    devbranch = "main",
-#   devurl = "dev",
-#   versions = ["stable" => "v^", "dev" => "dev"],
-#   push_preview = true,
-)
+if isci
+    Documenter.deploydocs(;
+        repo = "github.com/$base",
+        devbranch = "main",
+        devurl = "dev",
+        versions = ["stable" => "v^", "dev" => "dev"],
+        forcepush = true,
+#       push_preview = true,
+        # see https://$org.github.io/$repo.jl/previews/PR##
+    )
+end
