@@ -3,7 +3,7 @@
 org, reps = :JuliaIO, :AVSfldIO
 eval(:(using $reps))
 import Documenter
-import Literate
+#import Literate
 
 base = "$org/$reps.jl"
 
