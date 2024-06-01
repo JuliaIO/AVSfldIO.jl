@@ -1,4 +1,4 @@
-# push!(LOAD_PATH,"../src/")
+execute = isempty(ARGS) || ARGS[1] == "run"
 
 org, reps = :JuliaIO, :AVSfldIO
 eval(:(using $reps))
@@ -7,9 +7,12 @@ import Documenter
 
 base = "$org/$reps.jl"
 
+
 repo = eval(:($reps))
 Documenter.DocMeta.setdocmeta!(repo, :DocTestSetup, :(using $reps); recursive=true)
 
+
+isci = get(ENV, "CI", nothing) == "true"
 
 format = Documenter.HTML(;
     prettyurls = isci,
