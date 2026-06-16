@@ -1,13 +1,16 @@
 # AVSfldIO
 
-[![action status][action-img]][action-url]
-[![pkgeval status][pkgeval-img]][pkgeval-url]
+[![docs-stable][docs-stable-img]][docs-stable-url]
+[![docs-dev][docs-dev-img]][docs-dev-url]
+[![action][action-img]][action-url]
+[![Aqua QA][aqua-img]][aqua-url]
 [![codecov][codecov-img]][codecov-url]
+[![deps][deps-img]][deps-url]
 [![license][license-img]][license-url]
-[![docs stable][docs-stable-img]][docs-stable-url]
-[![docs dev][docs-dev-img]][docs-dev-url]
+[![pkgeval][pkgeval-img]][pkgeval-url]
+[![version][ver-img]][ver-url]
 
-https://github.com/JuliaIO/AVSfldIO.jl.git
+https://github.com/JuliaIO/AVSfldIO.jl
 
 File IO for AVS format "field" data files
 with extension `.fld`
@@ -256,8 +259,8 @@ for this format.
 * https://doi.org/10.1109/38.31462
 * https://www.ks.uiuc.edu/Research/vmd/plugins/molfile/avsplugin.html
 * https://dav.lbl.gov/archive/NERSC/Software/express/help6.1/help/reference/dvmac/Field_Fi.htm
-* http://paulbourke.net/dataformats/field/
-* http://surferhelp.goldensoftware.com/subsys/subsys_avs_field_file_desc.htm
+* https://paulbourke.net/dataformats/field
+* https://surferhelp.goldensoftware.com/subsys/subsys_avs_field_file_desc.htm
 * https://lanl.github.io/LaGriT/pages/docs/read_avs.html
 
 
@@ -271,22 +274,28 @@ and his group at the University of Michigan,
 and contributors
 
 <!-- URLs -->
-[action-img]: https://github.com/JuliaIO/AVSfldIO.jl/workflows/Unit%20test/badge.svg
+[action-img]: https://github.com/JuliaIO/AVSfldIO.jl/workflows/CI/badge.svg
 [action-url]: https://github.com/JuliaIO/AVSfldIO.jl/actions
-[build-img]: https://github.com/JuliaIO/AVSfldIO.jl/workflows/CI/badge.svg?branch=main
-[build-url]: https://github.com/JuliaIO/AVSfldIO.jl/actions?query=workflow%3ACI+branch%3Amain
-[pkgeval-img]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.svg
-[pkgeval-url]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.html
-[codecov-img]: https://codecov.io/github/JuliaIO/AVSfldIO.jl/coverage.svg?branch=main
-[codecov-url]: https://codecov.io/github/JuliaIO/AVSfldIO.jl?branch=main
-[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
-[docs-stable-url]: https://JuliaIO.github.io/AVSfldIO.jl/stable
+
+[aqua-img]: https://juliatesting.github.io/Aqua.jl/dev/assets/badge.svg
+[aqua-url]: https://github.com/JuliaTesting/Aqua.jl
+
+[codecov-img]: https://codecov.io/github/JuliaIO/AVSfldIO.jl/coverage.svg
+[codecov-url]: https://codecov.io/github/JuliaIO/AVSfldIO.jl
+
+[deps-img]: https://juliahub.com/docs/AVSfldIO/deps.svg
+[deps-url]: https://juliahub.com/ui/Packages/AVSfldIO
+
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
 [docs-dev-url]: https://JuliaIO.github.io/AVSfldIO.jl/dev
-[license-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
+[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
+[docs-stable-url]: https://JuliaIO.github.io/AVSfldIO.jl/stable
+
+[license-img]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 [license-url]: LICENSE
-<!--
-[![coveralls][coveralls-img]][coveralls-url]
-[coveralls-img]: https://coveralls.io/repos/JuliaIO/AVSfldIO.jl/badge.svg?branch=main
-[coveralls-url]: https://coveralls.io/github/JuliaIO/AVSfldIO.jl?branch=main
--->
+
+[pkgeval-img]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.svg
+[pkgeval-url]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.html
+
+[ver-img]: https://juliahub.com/docs/AVSfldIO/version.svg
+[ver-url]: https://juliahub.com/ui/Packages/AVSfldIO

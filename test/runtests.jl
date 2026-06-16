@@ -3,6 +3,8 @@
 using AVSfldIO
 using Test: @test, @testset, detect_ambiguities
 
+include("aqua.jl")
+
 list = [
 "fld-read.jl"
 "fld-write.jl"
