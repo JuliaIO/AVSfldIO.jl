@@ -259,8 +259,8 @@ for this format.
 * https://doi.org/10.1109/38.31462
 * https://www.ks.uiuc.edu/Research/vmd/plugins/molfile/avsplugin.html
 * https://dav.lbl.gov/archive/NERSC/Software/express/help6.1/help/reference/dvmac/Field_Fi.htm
-* http://paulbourke.net/dataformats/field/
-* http://surferhelp.goldensoftware.com/subsys/subsys_avs_field_file_desc.htm
+* https://paulbourke.net/dataformats/field
+* https://surferhelp.goldensoftware.com/subsys/subsys_avs_field_file_desc.htm
 * https://lanl.github.io/LaGriT/pages/docs/read_avs.html
 
 
@@ -276,19 +276,26 @@ and contributors
 <!-- URLs -->
 [action-img]: https://github.com/JuliaIO/AVSfldIO.jl/workflows/CI/badge.svg
 [action-url]: https://github.com/JuliaIO/AVSfldIO.jl/actions
-[aqua-img]: https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg
+
+[aqua-img]: https://juliatesting.github.io/Aqua.jl/dev/assets/badge.svg
 [aqua-url]: https://github.com/JuliaTesting/Aqua.jl
+
 [codecov-img]: https://codecov.io/github/JuliaIO/AVSfldIO.jl/coverage.svg
 [codecov-url]: https://codecov.io/github/JuliaIO/AVSfldIO.jl
+
 [deps-img]: https://juliahub.com/docs/AVSfldIO/deps.svg
 [deps-url]: https://juliahub.com/ui/Packages/AVSfldIO
-[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
-[docs-stable-url]: https://JuliaIO.github.io/AVSfldIO.jl/stable
+
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
 [docs-dev-url]: https://JuliaIO.github.io/AVSfldIO.jl/dev
-[license-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
+[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
+[docs-stable-url]: https://JuliaIO.github.io/AVSfldIO.jl/stable
+
+[license-img]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 [license-url]: LICENSE
+
 [pkgeval-img]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.svg
 [pkgeval-url]: https://juliaci.github.io/NanosoldierReports/pkgeval_badges/A/AVSfldIO.html
+
 [ver-img]: https://juliahub.com/docs/AVSfldIO/version.svg
 [ver-url]: https://juliahub.com/ui/Packages/AVSfldIO
